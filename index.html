@@ -116,91 +116,57 @@
         </div>
     </section>
 
-    <!-- SEÇÃO DE GALERIA VISUAL / RECAP (7 FOTOS EM CÍRCULO 3D) -->
-    <section class="gallery-section" id="gallery">
-        <div class="gallery-container">
-            <h2 class="section-title"> VISUAL <span class="glitch-text"> DE FOTOS </span></h2>
-            
-            <div class="gallery-grid">
+  <!-- SEÇÃO DE GALERIA / CARROSSEL 3D CIRCULAR -->
+<section class="gallery-section" id="gallery">
+    <div class="gallery-container">
+        <h2 class="section-title"> VISUAL <span class="glitch-text"> DE FOTOS </span></h2>
+        
+        <!-- Container 3D do Carrossel -->
+        <div class="carousel-3d-container">
+            <div class="carousel-3d" id="carousel3D">
                 <!-- Foto 1 -->
-                <div class="gallery-item">
-                    <div class="gallery-img-wrapper">
-                        <img src="https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?auto=format&fit=crop&w=800&q=80" alt="Show ao vivo">
-                    </div>
-                    <div class="gallery-overlay">
-                        <h3>MAIN STAGE - TOKYO</h3>
-                        <p>LIVE PERFORMANCE</p>
-                    </div>
+                <div class="carousel-item" style="--i: 1;">
+                    <img src="https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?auto=format&fit=crop&w=800&q=80" alt="Show ao vivo">
+                    <div class="carousel-overlay"><h3>TOKYO</h3></div>
                 </div>
-
                 <!-- Foto 2 -->
-                <div class="gallery-item">
-                    <div class="gallery-img-wrapper">
-                        <img src="https://images.unsplash.com/photo-1470225620780-dba8ba36b745?auto=format&fit=crop&w=800&q=80" alt="Estúdio e Produção">
-                    </div>
-                    <div class="gallery-overlay">
-                        <h3>STUDIO SESSIONS</h3>
-                        <p>ANALOG SYNTHS</p>
-                    </div>
+                <div class="carousel-item" style="--i: 2;">
+                    <img src="https://images.unsplash.com/photo-1470225620780-dba8ba36b745?auto=format&fit=crop&w=800&q=80" alt="Estúdio">
+                    <div class="carousel-overlay"><h3>STUDIO</h3></div>
                 </div>
-
                 <!-- Foto 3 -->
-                <div class="gallery-item">
-                    <div class="gallery-img-wrapper">
-                        <img src="https://images.unsplash.com/photo-1574391884720-bbc3540c1a8d?auto=format&fit=crop&w=800&q=80" alt="Fãs no Festival">
-                    </div>
-                    <div class="gallery-overlay">
-                        <h3>WAREHOUSE PARTY</h3>
-                        <p>BERLIN</p>
-                    </div>
+                <div class="carousel-item" style="--i: 3;">
+                    <img src="https://images.unsplash.com/photo-1574391884720-bbc3540c1a8d?auto=format&fit=crop&w=800&q=80" alt="Fãs">
+                    <div class="carousel-overlay"><h3>BERLIN</h3></div>
                 </div>
-
-                <!-- Foto 4 (Nova) -->
-                <div class="gallery-item">
-                    <div class="gallery-img-wrapper">
-                        <img src="https://images.unsplash.com/photo-1508700115892-45ecd05ae2ad?auto=format&fit=crop&w=800&q=80" alt="Backstage">
-                    </div>
-                    <div class="gallery-overlay">
-                        <h3>BACKSTAGE VIP</h3>
-                        <p>PRE-SHOW</p>
-                    </div>
+                <!-- Foto 4 -->
+                <div class="carousel-item" style="--i: 4;">
+                    <img src="https://images.unsplash.com/photo-1508700115892-45ecd05ae2ad?auto=format&fit=crop&w=800&q=80" alt="Backstage">
+                    <div class="carousel-overlay"><h3>VIP</h3></div>
                 </div>
-
-                <!-- Foto 5 (Nova) -->
-                <div class="gallery-item">
-                    <div class="gallery-img-wrapper">
-                        <img src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=800&q=80" alt="Crowd Night">
-                    </div>
-                    <div class="gallery-overlay">
-                        <h3>CYBER CROWD</h3>
-                        <p>ENERGY</p>
-                    </div>
+                <!-- Foto 5 -->
+                <div class="carousel-item" style="--i: 5;">
+                    <img src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=800&q=80" alt="Crowd">
+                    <div class="carousel-overlay"><h3>CROWD</h3></div>
                 </div>
-
-                <!-- Foto 6 (Nova) -->
-                <div class="gallery-item">
-                    <div class="gallery-img-wrapper">
-                        <img src="https://images.unsplash.com/photo-1520523839896-515438848d79?auto=format&fit=crop&w=800&q=80" alt="DJ Controller">
-                    </div>
-                    <div class="gallery-overlay">
-                        <h3>MIXING DESK</h3>
-                        <p>HARDWARE</p>
-                    </div>
+                <!-- Foto 6 -->
+                <div class="carousel-item" style="--i: 6;">
+                    <img src="https://images.unsplash.com/photo-1520523839896-515438848d79?auto=format&fit=crop&w=800&q=80" alt="Mixer">
+                    <div class="carousel-overlay"><h3>GEAR</h3></div>
                 </div>
-
-                <!-- Foto 7 (Nova) -->
-                <div class="gallery-item">
-                    <div class="gallery-img-wrapper">
-                        <img src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=800&q=80" alt="Night Lights">
-                    </div>
-                    <div class="gallery-overlay">
-                        <h3>NEON LIGHTS</h3>
-                        <p>AFTERHOURS</p>
-                    </div>
+                <!-- Foto 7 -->
+                <div class="carousel-item" style="--i: 7;">
+                    <img src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=800&q=80" alt="Lights">
+                    <div class="carousel-overlay"><h3>NEON</h3></div>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
+
+
+
+    
 
     <!-- SEÇÃO DE FORMULÁRIO PARA CONTRATANTES -->
     <section class="booking-section" id="booking">
