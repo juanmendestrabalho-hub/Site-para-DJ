@@ -679,7 +679,41 @@ html {
     font-size: 0.9rem;
     letter-spacing: 2px;
     margin-top: -20px;
-    margin-bottom: 50px;
+    margin-bottom: 30px;
+}
+
+/* Botões de Alternância do Formulário */
+.channel-selector {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.channel-btn {
+    padding: 14px 28px;
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #888;
+    font-family: 'Syncopate', sans-serif;
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-radius: 4px;
+}
+
+.channel-btn:hover {
+    color: #fff;
+    border-color: #ff00ea;
+}
+
+.channel-btn.active {
+    background: #ff00ea;
+    color: #000;
+    border-color: #ff00ea;
+    font-weight: bold;
+    box-shadow: 0 0 20px rgba(255, 0, 234, 0.4);
 }
 
 .booking-form {
@@ -780,5 +814,8 @@ html {
     }
     .booking-form {
         padding: 25px 15px;
+    }
+    .channel-selector {
+        flex-direction: column;
     }
 }
