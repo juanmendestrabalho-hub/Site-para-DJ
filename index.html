@@ -4,16 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Novo Projeto | DJ Music</title>
- 
+    
     <link href="https://fonts.googleapis.com/css2?family=Syncopate:wght@400;700&family=Space+Grotesk:wght@300;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- Fundo Interativo  -->
+    <!-- Fundo Interativo -->
     <canvas id="cyberCanvas"></canvas>
 
-    <!-- Conteúdo Principal  -->
+    <!-- Conteúdo Principal -->
     <main class="hero-content">
         <h3 class="subtitle">NOVOS LANÇAMENTOS</h3>
         <h1 class="glitch-title" data-text="CYBER TRACK"> TRACKS </h1>
@@ -25,259 +25,257 @@
         </div>
     </main>
 
-<!-- SEÇÃO DE EVENTOS E RADAR -->
-<section class="tour-section" id="tour">
-    <div class="tour-container">
-        <!-- Lista de Eventos -->
-        <div class="tour-list">
-            <h2 class="section-title">TOUR <span class="glitch-text">DATES</span></h2>
+    <!-- SEÇÃO DE EVENTOS E RADAR -->
+    <section class="tour-section" id="tour">
+        <div class="tour-container">
+            <!-- Lista de Eventos -->
+            <div class="tour-list">
+                <h2 class="section-title">TOUR <span class="glitch-text">DATES</span></h2>
+                
+                <!-- Evento 1 -->
+                <div class="event-row" data-x="30" data-y="40">
+                    <div class="event-date">24 OUT</div>
+                    <div class="event-info">
+                        <h3>CYBER FESTIVAL</h3>
+                        <p>Tóquio, Japão</p>
+                    </div>
+                    <a href="#" class="btn-buy">TICKETS</a>
+                </div>
+
+                <!-- Evento 2 -->
+                <div class="event-row" data-x="70" data-y="20">
+                    <div class="event-date">12 NOV</div>
+                    <div class="event-info">
+                        <h3>NEON WAREHOUSE</h3>
+                        <p>Berlim, Alemanha</p>
+                    </div>
+                    <a href="#" class="btn-buy">TICKETS</a>
+                </div>
+
+                <!-- Evento 3 -->
+                <div class="event-row" data-x="25" data-y="75">
+                    <div class="event-date">05 DEZ</div>
+                    <div class="event-info">
+                        <h3>BASEMENT CLUB</h3>
+                        <p>São Paulo, Brasil</p>
+                    </div>
+                    <a href="#" class="btn-buy">TICKETS</a>
+                </div>
+            </div>
+
+            <!-- Radar Cibernético -->
+            <div class="radar-container">
+                <div class="radar">
+                    <div class="sweep"></div>
+                    <div id="radar-blip" class="blip"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECÇÃO DE MÚSICA / LANÇAMENTO 3D -->
+    <section class="music-section" id="music">
+        <div class="music-container">
+            <!-- Informações -->
+            <div class="music-info">
+                <h2 class="section-title"> MINHA TRAJETORIA <span class="glitch-text"> COMO DJ </span></h2>
+                <h3 class="track-title">XXXXXXXXXXXXX</h3>
+                <p class="track-desc">A mais nova track que está a dominar os clubes. Sente o bass analógico fundido com a energia digital. Disponível agora em todas as plataformas de streaming.</p>
+                
+                <!-- Botões de Streaming Atualizados -->
+                <div class="stream-buttons">
+                    <a href="#" target="_blank" class="btn-stream spotify">SPOTIFY</a>
+                    <a href="#" target="_blank" class="btn-stream apple">APPLE MUSIC</a>
+                    <a href="#" target="_blank" class="btn-stream deezer">DEEZER</a>
+                    <a href="#" target="_blank" class="btn-stream soundcloud">SOUNDCLOUD</a>
+                </div>
+            </div>
+
+            <!-- CD Holográfico Interativo -->
+            <div class="cd-container">
+                <div class="cd-wrapper" id="cdWrapper">
+                    <div class="cd">
+                        <div class="cd-center"></div>
+                        <div class="hologram-glare"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEÇÃO DE GALERIA VISUAL / RECAP -->
+    <section class="gallery-section" id="gallery">
+        <div class="gallery-container">
+            <h2 class="section-title"> VISUAL <span class="glitch-text"> DE FOTOS </span></h2>
             
-            <!-- Evento 1 (Coordenadas X e Y no mapa) -->
-            <div class="event-row" data-x="30" data-y="40">
-                <div class="event-date">24 OUT</div>
-                <div class="event-info">
-                    <h3>CYBER FESTIVAL</h3>
-                    <p>Tóquio, Japão</p>
+            <div class="gallery-grid">
+                <!-- Item 1 -->
+                <div class="gallery-item">
+                    <div class="gallery-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?auto=format&fit=crop&w=800&q=80" alt="Show ao vivo">
+                    </div>
+                    <div class="gallery-overlay">
+                        <h3>MAIN STAGE - TOKYO</h3>
+                        <p>LIVE PERFORMANCE</p>
+                    </div>
                 </div>
-                <a href="#" class="btn-buy">TICKETS</a>
-            </div>
 
-            <!-- Evento 2 -->
-            <div class="event-row" data-x="70" data-y="20">
-                <div class="event-date">12 NOV</div>
-                <div class="event-info">
-                    <h3>NEON WAREHOUSE</h3>
-                    <p>Berlim, Alemanha</p>
+                <!-- Item 2 -->
+                <div class="gallery-item">
+                    <div class="gallery-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1470225620780-dba8ba36b745?auto=format&fit=crop&w=800&q=80" alt="Estúdio e Produção">
+                    </div>
+                    <div class="gallery-overlay">
+                        <h3>STUDIO SESSIONS</h3>
+                        <p>ANALOG SYNTHS</p>
+                    </div>
                 </div>
-                <a href="#" class="btn-buy">TICKETS</a>
-            </div>
 
-            <!-- Evento 3 -->
-            <div class="event-row" data-x="25" data-y="75">
-                <div class="event-date">05 DEZ</div>
-                <div class="event-info">
-                    <h3>BASEMENT CLUB</h3>
-                    <p>São Paulo, Brasil</p>
+                <!-- Item 3 -->
+                <div class="gallery-item">
+                    <div class="gallery-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1574391884720-bbc3540c1a8d?auto=format&fit=crop&w=800&q=80" alt="Fãs no Festival">
+                    </div>
+                    <div class="gallery-overlay">
+                        <h3>WAREHOUSE PARTY</h3>
+                        <p>BERLIN</p>
+                    </div>
                 </div>
-                <a href="#" class="btn-buy">TICKETS</a>
             </div>
         </div>
+    </section>
 
-        <!-- Radar Cibernético -->
-        <div class="radar-container">
-            <div class="radar">
-                <div class="sweep"></div>
-                <div id="radar-blip" class="blip"></div>
+
+
+
+
+
+
+    
+    <!-- SEÇÃO DE FORMULÁRIO PARA CONTRATANTES -->
+    <section class="booking-section" id="booking">
+        <div class="booking-container">
+            <h2 class="section-title">BOOKING <span class="glitch-text">& PRESS</span></h2>
+            <p class="booking-subtitle">ENVIE SUA PROPOSTA DE SHOW, FESTIVAL OU EVENTO PRIVADO.</p>
+
+            <!-- Seletor de Canal de Envio -->
+            <div class="channel-selector">
+                <button type="button" class="channel-btn active" id="btnWpp">ENVIAR VIA WHATSAPP</button>
+                <button type="button" class="channel-btn" id="btnEmail">ENVIAR VIA E-MAIL</button>
+            </div>
+
+            <!-- FORMULÁRIO 1: WHATSAPP -->
+            <form class="booking-form active-form" id="bookingFormWpp">
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="wppName">NOME / PRODUTORA *</label>
+                        <input type="text" id="wppName" required placeholder="Ex: Cyber Events Org">
+                    </div>
+                    <div class="form-group">
+                        <label for="wppEmail">E-MAIL DE CONTATO *</label>
+                        <input type="email" id="wppEmail" required placeholder="contato@empresa.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="wppPhone">TELEFONE / WHATSAPP *</label>
+                        <input type="tel" id="wppPhone" required placeholder="+55 (11) 99999-9999">
+                    </div>
+                    <div class="form-group">
+                        <label for="wppLocation">CIDADE / PAÍS *</label>
+                        <input type="text" id="wppLocation" required placeholder="Ex: São Paulo, Brasil">
+                    </div>
+                    <div class="form-group">
+                        <label for="wppDate">DATA DO EVENTO *</label>
+                        <input type="date" id="wppDate" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="wppCapacity">CAPACIDADE DE PÚBLICO</label>
+                        <select id="wppCapacity">
+                            <option value="" disabled selected>Selecione a estimativa</option>
+                            <option value="Club (Até 500 pessoas)">Club (Até 500 pessoas)</option>
+                            <option value="Médio (500 a 2.000 pessoas)">Médio (500 a 2.000 pessoas)</option>
+                            <option value="Grande (2.000 a 10.000 pessoas)">Grande (2.000 a 10.000 pessoas)</option>
+                            <option value="Festival (+10.000 pessoas)">Festival (+10.000 pessoas)</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group full-width">
+                    <label for="wppDetails">DETALHES DO EVENTO / PROPOSTA *</label>
+                    <textarea id="wppDetails" rows="4" required placeholder="Estrutura de som, horários previstos e detalhes do Line-up..."></textarea>
+                </div>
+                <button type="submit" class="btn-primary btn-submit">
+                    ENVIAR PROPOSTA VIA WHATSAPP <span class="btn-glitch">_</span>
+                </button>
+                <div class="form-status" id="wppStatus"></div>
+            </form>
+
+            <!-- FORMULÁRIO 2: E-MAIL -->
+            <form class="booking-form" id="bookingFormEmail" style="display: none;">
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="emailName">NOME / PRODUTORA *</label>
+                        <input type="text" id="emailName" required placeholder="Ex: Cyber Events Org">
+                    </div>
+                    <div class="form-group">
+                        <label for="emailReplyTo">SEU E-MAIL DE RESPOSTA *</label>
+                        <input type="email" id="emailReplyTo" required placeholder="contato@empresa.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="emailPhone">TELEFONE / WHATSAPP *</label>
+                        <input type="tel" id="emailPhone" required placeholder="+55 (11) 99999-9999">
+                    </div>
+                    <div class="form-group">
+                        <label for="emailLocation">CIDADE / PAÍS *</label>
+                        <input type="text" id="emailLocation" required placeholder="Ex: São Paulo, Brasil">
+                    </div>
+                    <div class="form-group">
+                        <label for="emailDate">DATA DO EVENTO *</label>
+                        <input type="date" id="emailDate" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="emailCapacity">CAPACIDADE DE PÚBLICO</label>
+                        <select id="emailCapacity">
+                            <option value="" disabled selected>Selecione a estimativa</option>
+                            <option value="Club (Até 500 pessoas)">Club (Até 500 pessoas)</option>
+                            <option value="Médio (500 a 2.000 pessoas)">Médio (500 a 2.000 pessoas)</option>
+                            <option value="Grande (2.000 a 10.000 pessoas)">Grande (2.000 a 10.000 pessoas)</option>
+                            <option value="Festival (+10.000 pessoas)">Festival (+10.000 pessoas)</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group full-width">
+                    <label for="emailDetails">DETALHES DO EVENTO / PROPOSTA *</label>
+                    <textarea id="emailDetails" rows="4" required placeholder="Estrutura de som, horários previstos e detalhes do Line-up..."></textarea>
+                </div>
+                <button type="submit" class="btn-primary btn-submit">
+                    ENVIAR PROPOSTA VIA E-MAIL <span class="btn-glitch">_</span>
+                </button>
+                <div class="form-status" id="emailStatus"></div>
+            </form>
+        </div>
+    </section>
+
+    
+    <!-- RODAPÉ TECNOLÓGICO -->
+    <footer class="tech-footer" id="contact">
+        <div class="footer-container">
+            <div class="footer-brand">
+                <h2 class="glitch-title-small" data-text="SYSTEM.OFFLINE">SYSTEM.OFFLINE</h2>
+                <p> :) <a href="mailto:booking@cybertrack.com" class="neon-link"> Em teste do Veinho (:</a></p>
+            </div>
+
+            <div class="social-grid">
+                <a href="#" class="social-btn" data-text="SPOTIFY">SPOTIFY</a>
+                <a href="#" class="social-btn" data-text="INSTAGRAM">INSTAGRAM</a>
+                <a href="#" class="social-btn" data-text="YOUTUBE">YOUTUBE</a>
+                <a href="#" class="social-btn" data-text="X_TWITTER">X_TWITTER</a>
             </div>
         </div>
-    </div>
-</section>
-
-<!-- SECÇÃO DE MÚSICA / LANÇAMENTO 3D -->
-<section class="music-section" id="music">
-    <div class="music-container">
         
-        <!-- Informações  -->
-        <div class="music-info">
-            <h2 class="section-title"> MINHA TRAJETORIA <span class="glitch-text"> COMO DJ </span></h2>
-            <h3 class="track-title">XXXXXXXXXXXXX</h3>
-            <p class="track-desc">A mais nova track que está a dominar os clubes. Sente o bass analógico fundido com a energia digital. Disponível agora em todas as plataformas de streaming.</p>
-            
-            <div class="stream-buttons">
-                <a href="#" class="btn-stream spotify">SPOTIFY</a>
-                <a href="#" class="btn-stream apple">APPLE MUSIC</a>
-            </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 DJ Music TRACK. ALL RIGHTS RESERVED. JUAN MB<span class="blinking-cursor">_</span></p>
         </div>
-        <!-- CD Holográfico Interativo (Estilo Deadmau5) -->
-        <div class="cd-container">
-            <div class="cd-wrapper" id="cdWrapper">
-                <div class="cd">
-                    <!-- O buraco no centro do CD -->
-                    <div class="cd-center"></div>
-                    <!-- Camada de brilho holográfico -->
-                    <div class="hologram-glare"></div>
-                </div>
-            </div>
-        </div>
+    </footer>    
 
-    </div>
-</section>
-
-<!-- SEÇÃO DE GALERIA VISUAL / RECAP -->
-<section class="gallery-section" id="gallery">
-    <div class="gallery-container">
-        <h2 class="section-title"> VISUAL <span class="glitch-text"> DE FOTOS </span></h2>
-        
-        <div class="gallery-grid">
-            <!-- Item 1 -->
-            <div class="gallery-item">
-                <div class="gallery-img-wrapper">
-                    <!-- Substitua o src pela imagem desejada -->
-                    <img src="https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?auto=format&fit=crop&w=800&q=80" alt="Show ao vivo">
-                </div>
-                <div class="gallery-overlay">
-                    <h3>MAIN STAGE - TOKYO</h3>
-                    <p>LIVE PERFORMANCE</p>
-                </div>
-            </div>
-
-            <!-- Item 2 -->
-            <div class="gallery-item">
-                <div class="gallery-img-wrapper">
-                    <img src="https://images.unsplash.com/photo-1470225620780-dba8ba36b745?auto=format&fit=crop&w=800&q=80" alt="Estúdio e Produção">
-                </div>
-                <div class="gallery-overlay">
-                    <h3>STUDIO SESSIONS</h3>
-                    <p>ANALOG SYNTHS</p>
-                </div>
-            </div>
-
-            <!-- Item 3 -->
-            <div class="gallery-item">
-                <div class="gallery-img-wrapper">
-                    <img src="https://images.unsplash.com/photo-1574391884720-bbc3540c1a8d?auto=format&fit=crop&w=800&q=80" alt="Fãs no Festival">
-                </div>
-                <div class="gallery-overlay">
-                    <h3>WAREHOUSE PARTY</h3>
-                    <p>BERLIN</p>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-
-
-
-
-
-
-
-
-<!-- SEÇÃO DE FORMULÁRIO PARA CONTRATANTES -->
-<section class="booking-section" id="booking">
-    <div class="booking-container">
-        <h2 class="section-title">BOOKING <span class="glitch-text">& PRESS</span></h2>
-        <p class="booking-subtitle">ENVIE SUA PROPOSTA DE SHOW, FESTIVAL OU EVENTO PRIVADO.</p>
-
-        <!-- Seletor de Canal de Envio -->
-        <div class="channel-selector">
-            <button type="button" class="channel-btn active" id="btnWpp">ENVIAR VIA WHATSAPP</button>
-            <button type="button" class="channel-btn" id="btnEmail">ENVIAR VIA E-MAIL</button>
-        </div>
-
-        <!-- FORMULÁRIO 1: WHATSAPP -->
-        <form class="booking-form active-form" id="bookingFormWpp">
-            <div class="form-grid">
-                <div class="form-group">
-                    <label for="wppName">NOME / PRODUTORA *</label>
-                    <input type="text" id="wppName" required placeholder="Ex: Cyber Events Org">
-                </div>
-                <div class="form-group">
-                    <label for="wppEmail">E-MAIL DE CONTATO *</label>
-                    <input type="email" id="wppEmail" required placeholder="contato@empresa.com">
-                </div>
-                <div class="form-group">
-                    <label for="wppPhone">TELEFONE / WHATSAPP *</label>
-                    <input type="tel" id="wppPhone" required placeholder="+55 (11) 99999-9999">
-                </div>
-                <div class="form-group">
-                    <label for="wppLocation">CIDADE / PAÍS *</label>
-                    <input type="text" id="wppLocation" required placeholder="Ex: São Paulo, Brasil">
-                </div>
-                <div class="form-group">
-                    <label for="wppDate">DATA DO EVENTO *</label>
-                    <input type="date" id="wppDate" required>
-                </div>
-                <div class="form-group">
-                    <label for="wppCapacity">CAPACIDADE DE PÚBLICO</label>
-                    <select id="wppCapacity">
-                        <option value="" disabled selected>Selecione a estimativa</option>
-                        <option value="Club (Até 500 pessoas)">Club (Até 500 pessoas)</option>
-                        <option value="Médio (500 a 2.000 pessoas)">Médio (500 a 2.000 pessoas)</option>
-                        <option value="Grande (2.000 a 10.000 pessoas)">Grande (2.000 a 10.000 pessoas)</option>
-                        <option value="Festival (+10.000 pessoas)">Festival (+10.000 pessoas)</option>
-                    </select>
-                </div>
-            </div>
-            <div class="form-group full-width">
-                <label for="wppDetails">DETALHES DO EVENTO / PROPOSTA *</label>
-                <textarea id="wppDetails" rows="4" required placeholder="Estrutura de som, horários previstos e detalhes do Line-up..."></textarea>
-            </div>
-            <button type="submit" class="btn-primary btn-submit">
-                ENVIAR PROPOSTA VIA WHATSAPP <span class="btn-glitch">_</span>
-            </button>
-            <div class="form-status" id="wppStatus"></div>
-        </form>
-
-        <!-- FORMULÁRIO 2: E-MAIL -->
-        <form class="booking-form" id="bookingFormEmail" style="display: none;">
-            <div class="form-grid">
-                <div class="form-group">
-                    <label for="emailName">NOME / PRODUTORA *</label>
-                    <input type="text" id="emailName" required placeholder="Ex: Cyber Events Org">
-                </div>
-                <div class="form-group">
-                    <label for="emailReplyTo">SEU E-MAIL DE RESPOSTA *</label>
-                    <input type="email" id="emailReplyTo" required placeholder="contato@empresa.com">
-                </div>
-                <div class="form-group">
-                    <label for="emailPhone">TELEFONE / WHATSAPP *</label>
-                    <input type="tel" id="emailPhone" required placeholder="+55 (11) 99999-9999">
-                </div>
-                <div class="form-group">
-                    <label for="emailLocation">CIDADE / PAÍS *</label>
-                    <input type="text" id="emailLocation" required placeholder="Ex: São Paulo, Brasil">
-                </div>
-                <div class="form-group">
-                    <label for="emailDate">DATA DO EVENTO *</label>
-                    <input type="date" id="emailDate" required>
-                </div>
-                <div class="form-group">
-                    <label for="emailCapacity">CAPACIDADE DE PÚBLICO</label>
-                    <select id="emailCapacity">
-                        <option value="" disabled selected>Selecione a estimativa</option>
-                        <option value="Club (Até 500 pessoas)">Club (Até 500 pessoas)</option>
-                        <option value="Médio (500 a 2.000 pessoas)">Médio (500 a 2.000 pessoas)</option>
-                        <option value="Grande (2.000 a 10.000 pessoas)">Grande (2.000 a 10.000 pessoas)</option>
-                        <option value="Festival (+10.000 pessoas)">Festival (+10.000 pessoas)</option>
-                    </select>
-                </div>
-            </div>
-            <div class="form-group full-width">
-                <label for="emailDetails">DETALHES DO EVENTO / PROPOSTA *</label>
-                <textarea id="emailDetails" rows="4" required placeholder="Estrutura de som, horários previstos e detalhes do Line-up..."></textarea>
-            </div>
-            <button type="submit" class="btn-primary btn-submit">
-                ENVIAR PROPOSTA VIA E-MAIL <span class="btn-glitch">_</span>
-            </button>
-            <div class="form-status" id="emailStatus"></div>
-        </form>
-    </div>
-</section>
-
-    
-<!-- SECÇÃO RODAPÉ TECNOLÓGICO -->
-<footer class="tech-footer" id="contact">
-    <div class="footer-container">
-        <div class="footer-brand">
-            <h2 class="glitch-title-small" data-text="SYSTEM.OFFLINE">SYSTEM.OFFLINE</h2>
-            <p> :) <a href="mailto:booking@cybertrack.com" class="neon-link"> Em teste do Veinho  (:</a></p>
-        </div>
-
-        <div class="social-grid">
-            <a href="#" class="social-btn" data-text="SPOTIFY">SPOTIFY</a>
-            <a href="#" class="social-btn" data-text="INSTAGRAM">INSTAGRAM</a>
-            <a href="#" class="social-btn" data-text="YOUTUBE">YOUTUBE</a>
-            <a href="#" class="social-btn" data-text="X_TWITTER">X_TWITTER</a>
-        </div>
-    </div>
-    
-    <div class="footer-bottom">
-        <p>&copy; 2026 DJ Music TRACK. ALL RIGHTS RESERVED. JUAN MB<span class="blinking-cursor">_</span></p>
-    </div>
-</footer>    
-    
     <script src="app.js"></script>
 </body>
 </html>
