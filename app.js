@@ -113,3 +113,29 @@ eventRows.forEach(row => {
         blip.classList.remove('active');
     });
 });
+
+/* === CD HOLOGRÁFICO 3D (MOUSE TRACKING) === */
+const cdWrapper = document.getElementById('cdWrapper');
+
+if(cdWrapper) {
+    cdWrapper.addEventListener('mousemove', (e) => {
+        // Encontra a posição do CD no ecrã
+        const rect = cdWrapper.getBoundingClientRect();
+        
+        // Descobre onde o rato está em relação ao centro do CD
+        const x = e.clientX - rect.left - rect.width / 2;
+        const y = e.clientY - rect.top - rect.height / 2;
+        
+        // Calcula os graus de inclinação (máximo de 25 graus)
+        const tiltX = (y / (rect.height / 2)) * -25; 
+        const tiltY = (x / (rect.width / 2)) * 25;
+
+        // Aplica a rotação 3D
+        cdWrapper.style.transform = `rotateX(${tiltX}deg) rotateY(${tiltY}deg) scale(1.05)`;
+    });
+
+    // Quando o rato sai de cima, o CD volta ao estado plano
+    cdWrapper.addEventListener('mouseleave', () => {
+        cdWrapper.style.transform = `rotateX(0deg) rotateY(0deg) scale(1)`;
+    });
+}
