@@ -914,3 +914,52 @@ html {
     box-shadow: 0 0 25px rgba(255, 0, 234, 0.6);
     transform: translateY(-2px);
 }
+
+/* =========================================
+   SUPPORTED BY (MATRIZ DE SUPORTE)
+========================================= */
+.supported-section {
+    padding: 60px 5%;
+    background-color: #030305;
+    position: relative;
+    z-index: 10;
+    width: 100%;
+}
+
+.supported-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.support-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+    gap: 40px;
+    align-items: center;
+    justify-items: center;
+    margin-top: 40px;
+}
+
+.support-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+
+.support-item img {
+    max-width: 100%;
+    height: auto;
+    max-height: 50px;
+    /* Imagens começam a preto e branco e meio transparentes */
+    filter: grayscale(100%) opacity(40%);
+    transition: all 0.4s ease;
+    cursor: pointer;
+}
+
+.support-item:hover img {
+    /* Revela a cor original e adiciona brilho neon ciano */
+    filter: grayscale(0%) opacity(100%) drop-shadow(0 0 15px rgba(39, 185, 231, 0.6));
+    transform: scale(1.1);
+}
