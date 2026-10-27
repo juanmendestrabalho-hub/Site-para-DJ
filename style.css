@@ -916,7 +916,7 @@ html {
 }
 
 /* =========================================
-   SUPPORTED BY (MATRIZ DE SUPORTE)
+   SUPPORTED BY (TEXT LOGOS FALLBACK)
 ========================================= */
 .supported-section {
     padding: 60px 5%;
@@ -941,25 +941,35 @@ html {
     margin-top: 40px;
 }
 
-.support-item {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 10px;
-}
-
-.support-item img {
-    max-width: 100%;
-    height: auto;
-    max-height: 50px;
-    /* Imagens começam a preto e branco e meio transparentes */
-    filter: grayscale(100%) opacity(40%);
+/* Estilo para simular logótipos com texto */
+.support-item.text-logo {
+    font-family: 'Syncopate', sans-serif;
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.3); /* Cinzento apagado */
+    letter-spacing: 2px;
     transition: all 0.4s ease;
     cursor: pointer;
+    text-align: center;
+    white-space: nowrap;
 }
 
-.support-item:hover img {
-    /* Revela a cor original e adiciona brilho neon ciano */
-    filter: grayscale(0%) opacity(100%) drop-shadow(0 0 15px rgba(39, 185, 231, 0.6));
+/* Detalhes para simular as marcas específicas */
+.support-item.text-logo.bbc {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 300;
+    letter-spacing: 4px;
+}
+
+.support-item.text-logo.beatport {
+    text-transform: lowercase;
+    font-weight: 500;
+    letter-spacing: 1px;
+}
+
+/* Efeito Hover (Acende o Neon Ciano) */
+.support-item.text-logo:hover {
+    color: #ffffff;
+    text-shadow: 0 0 10px #27b9e7, 0 0 20px #27b9e7, 0 0 40px rgba(39, 185, 231, 0.6);
     transform: scale(1.1);
 }
