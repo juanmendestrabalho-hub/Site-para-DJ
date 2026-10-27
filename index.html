@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Novo Projeto | Tech & Music</title>
-    <!-- Fonte futurista -->
+    <title>Novo Projeto | DJ Music</title>
+ 
     <link href="https://fonts.googleapis.com/css2?family=Syncopate:wght@400;700&family=Space+Grotesk:wght@300;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
@@ -25,6 +25,62 @@
         </div>
     </main>
 
+<!-- SECÇÃO DE EVENTOS E RADAR -->
+<section class="tour-section" id="tour">
+    <div class="tour-container">
+        <!-- Lista de Eventos -->
+        <div class="tour-list">
+            <h2 class="section-title">TOUR <span class="glitch-text">DATES</span></h2>
+            
+            <!-- Evento 1 (Coordenadas X e Y no mapa) -->
+            <div class="event-row" data-x="30" data-y="40">
+                <div class="event-date">24 OUT</div>
+                <div class="event-info">
+                    <h3>CYBER FESTIVAL</h3>
+                    <p>Tóquio, Japão</p>
+                </div>
+                <a href="#" class="btn-buy">TICKETS</a>
+            </div>
+
+            <!-- Evento 2 -->
+            <div class="event-row" data-x="70" data-y="20">
+                <div class="event-date">12 NOV</div>
+                <div class="event-info">
+                    <h3>NEON WAREHOUSE</h3>
+                    <p>Berlim, Alemanha</p>
+                </div>
+                <a href="#" class="btn-buy">TICKETS</a>
+            </div>
+
+            <!-- Evento 3 -->
+            <div class="event-row" data-x="25" data-y="75">
+                <div class="event-date">05 DEZ</div>
+                <div class="event-info">
+                    <h3>BASEMENT CLUB</h3>
+                    <p>São Paulo, Brasil</p>
+                </div>
+                <a href="#" class="btn-buy">TICKETS</a>
+            </div>
+        </div>
+
+        <!-- Radar Cibernético -->
+        <div class="radar-container">
+            <div class="radar">
+                <div class="sweep"></div>
+                <div id="radar-blip" class="blip"></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+
+
+
+    
+    
     <script src="app.js"></script>
 </body>
 </html>
