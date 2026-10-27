@@ -237,3 +237,18 @@ if (formEmail) {
         }, 800);
     });
 }
+
+/* === CONTROLE DE ROTAÇÃO DO CD HOLOGRÁFICO === */
+const vinylDisc = document.getElementById('vinylDisc');
+
+if (vinylDisc) {
+    // Mantém o disco girando de forma autônoma ou ao passar o mouse
+    cdWrapper.addEventListener('mouseenter', () => {
+        vinylDisc.classList.add('playing');
+    });
+    
+    cdWrapper.addEventListener('mouseleave', () => {
+        // Se quiser que pare ao tirar o mouse (comente esta linha se preferir que ele gire sempre)
+        // vinylDisc.classList.remove('playing');
+    });
+}
