@@ -276,3 +276,155 @@ body {
     0% { transform: translate(-50%, -50%) scale(1); opacity: 1; }
     100% { transform: translate(-50%, -50%) scale(3); opacity: 0; }
 }
+
+/* =========================================
+   SECÇÃO DE MÚSICA & CD HOLOGRÁFICO 3D
+========================================= */
+.music-section {
+    padding: 100px 5%;
+    background-color: #030305;
+    position: relative;
+    z-index: 10;
+}
+
+.music-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 60px;
+    flex-wrap: wrap;
+}
+
+.music-info {
+    flex: 1;
+    min-width: 320px;
+}
+
+.track-title {
+    font-family: 'Syncopate', sans-serif;
+    font-size: 2.2rem;
+    color: #fff;
+    margin-bottom: 20px;
+    letter-spacing: 2px;
+}
+
+.track-desc {
+    color: #a0a0a0;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 40px;
+}
+
+/* Botões de Streaming */
+.stream-buttons {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.btn-stream {
+    padding: 16px 35px;
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.btn-stream.spotify {
+    background: #1DB954;
+    color: #000;
+}
+.btn-stream.spotify:hover {
+    background: #1ed760;
+    box-shadow: 0 0 25px rgba(29, 185, 84, 0.6);
+    transform: translateY(-3px);
+}
+
+.btn-stream.apple {
+    background: #fa243c;
+    color: #fff;
+}
+.btn-stream.apple:hover {
+    background: #ff3b50;
+    box-shadow: 0 0 25px rgba(250, 36, 60, 0.6);
+    transform: translateY(-3px);
+}
+
+/* O CD 3D */
+.cd-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    min-width: 320px;
+    /* Adiciona a perspetiva à câmara */
+    perspective: 1000px; 
+}
+
+.cd-wrapper {
+    width: 350px;
+    height: 350px;
+    position: relative;
+    transform-style: preserve-3d;
+    /* Transição muito rápida para seguir o rato suavemente */
+    transition: transform 0.1s ease-out; 
+    cursor: pointer;
+}
+
+.cd {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    /* Textura ranhurada a simular um vinil / CD */
+    background: repeating-radial-gradient(
+        #111,
+        #111 2px,
+        #222 3px,
+        #222 4px
+    );
+    box-shadow: 0 20px 50px rgba(0,0,0,0.9), inset 0 0 0 6px rgba(255,255,255,0.05);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 0; left: 0;
+    overflow: hidden;
+    /* Gira eternamente, mas começa pausado */
+    animation: spinCd 4s linear infinite;
+    animation-play-state: paused;
+}
+
+/* Quando passa o rato, o CD começa a girar */
+.cd-wrapper:hover .cd {
+    animation-play-state: running;
+}
+
+/* O Buraco Central com anel Neon */
+.cd-center {
+    width: 90px;
+    height: 90px;
+    background: #030305; /* Fundo do site para parecer furado */
+    border-radius: 50%;
+    border: 3px solid #00ffcc;
+    z-index: 2;
+    box-shadow: inset 0 0 15px rgba(0,0,0,0.9), 0 0 15px rgba(0, 255, 204, 0.5);
+}
+
+/* Película Holográfica por cima */
+.hologram-glare {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(0, 255, 204, 0.3) 0%, transparent 40%, transparent 60%, rgba(255, 0, 85, 0.3) 100%);
+    border-radius: 50%;
+    z-index: 3;
+    mix-blend-mode: screen;
+    pointer-events: none;
+}
+
+@keyframes spinCd {
+    100% { transform: rotate(360deg); }
+}
