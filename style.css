@@ -72,7 +72,6 @@ html {
     scroll-behavior: smooth;
 }
 
-
 /* Botões */
 .cta-group {
     display: flex;
@@ -333,7 +332,7 @@ html {
     margin-right: auto;
 }
 
-/* Botões de Streaming */
+/* Botões de Streaming (Spotify, Apple, Deezer, SoundCloud) */
 .stream-buttons {
     display: flex;
     gap: 20px;
@@ -369,6 +368,26 @@ html {
 .btn-stream.apple:hover {
     background: #ff3b50;
     box-shadow: 0 0 25px rgba(250, 36, 60, 0.6);
+    transform: translateY(-3px);
+}
+
+.btn-stream.deezer {
+    background: #a238ff;
+    color: #fff;
+}
+.btn-stream.deezer:hover {
+    background: #b55fff;
+    box-shadow: 0 0 25px rgba(162, 56, 255, 0.6);
+    transform: translateY(-3px);
+}
+
+.btn-stream.soundcloud {
+    background: #ff5500;
+    color: #fff;
+}
+.btn-stream.soundcloud:hover {
+    background: #ff7733;
+    box-shadow: 0 0 25px rgba(255, 85, 0, 0.6);
     transform: translateY(-3px);
 }
 
@@ -436,140 +455,6 @@ html {
 
 @keyframes spinCd {
     100% { transform: rotate(360deg); }
-}
-
-/* =========================================
-   RODAPÉ & SOCIALS
-========================================= */
-.tech-footer {
-    background-color: #010101;
-    padding: 80px 5% 20px;
-    border-top: 1px solid #1a1a1a;
-    position: relative;
-    overflow: hidden;
-    width: 100%;
-}
-
-.tech-footer::before {
-    content: '';
-    position: absolute;
-    top: 0; left: 0; right: 0;
-    height: 2px;
-    background: linear-gradient(90deg, transparent, #ff0055, #ff00ea, transparent);
-}
-
-.footer-container {
-    max-width: 1200px;
-    margin: 0 auto 60px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 40px;
-}
-
-.footer-brand p {
-    color: #888;
-    margin-top: 10px;
-    font-size: 0.9rem;
-}
-
-.neon-link {
-    color: #ff00ea;
-    text-decoration: none;
-    transition: 0.3s;
-}
-
-.neon-link:hover {
-    color: #fff;
-    text-shadow: 0 0 10px #ff00ea, 0 0 20px #ff00ea;
-}
-
-.glitch-title-small {
-    font-family: 'Syncopate', sans-serif;
-    font-size: 1.5rem;
-    color: #fff;
-    letter-spacing: 2px;
-}
-
-/* Sociais */
-.social-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 15px;
-}
-
-.social-btn {
-    padding: 15px 30px;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    color: #fff;
-    text-decoration: none;
-    font-family: 'Syncopate', sans-serif;
-    font-size: 0.75rem;
-    text-align: center;
-    letter-spacing: 2px;
-    position: relative;
-    background: transparent;
-    overflow: hidden;
-}
-
-.social-btn::before {
-    content: attr(data-text);
-    position: absolute;
-    top: 0; left: 0; right: 0; bottom: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: #ff00ea;
-    color: #000;
-    transform: translateX(-101%);
-    transition: transform 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-}
-
-.social-btn:hover::before {
-    transform: translateX(0);
-    animation: glitch-anim 0.3s infinite alternate;
-}
-
-.social-btn:hover {
-    border-color: #ff00ea;
-    box-shadow: 0 0 20px rgba(255, 0, 234, 0.4);
-}
-
-@keyframes glitch-anim {
-    0% { clip-path: polygon(0 2%, 100% 2%, 100% 5%, 0 5%); transform: translateX(2px); }
-    20% { clip-path: polygon(0 15%, 100% 15%, 100% 15%, 0 15%); transform: translateX(-2px); }
-    40% { clip-path: polygon(0 10%, 100% 10%, 100% 20%, 0 20%); transform: translateX(2px); }
-    60% { clip-path: polygon(0 1%, 100% 1%, 100% 2%, 0 2%); transform: translateX(-2px); }
-    80% { clip-path: polygon(0 33%, 100% 33%, 100% 33%, 0 33%); transform: translateX(2px); }
-    100% { clip-path: polygon(0 44%, 100% 44%, 100% 44%, 0 44%); transform: translateX(-2px); }
-}
-
-.footer-bottom {
-    text-align: center;
-    border-top: 1px solid rgba(255, 255, 255, 0.05);
-    padding-top: 25px;
-    font-size: 0.75rem;
-    color: #666;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-}
-
-.blinking-cursor {
-    font-weight: bold;
-    color: #ff0055;
-    animation: blink 1s step-end infinite;
-}
-
-@keyframes blink {
-    50% { opacity: 0; }
-}
-
-@media (max-width: 600px) {
-    .footer-container {
-        flex-direction: column;
-        text-align: center;
-    }
 }
 
 /* =========================================
@@ -805,6 +690,133 @@ html {
     text-shadow: 0 0 10px rgba(255, 0, 85, 0.5);
 }
 
+/* =========================================
+   RODAPÉ & SOCIALS
+========================================= */
+.tech-footer {
+    background-color: #010101;
+    padding: 80px 5% 20px;
+    border-top: 1px solid #1a1a1a;
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+}
+
+.tech-footer::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #ff0055, #ff00ea, transparent);
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 40px;
+}
+
+.footer-brand p {
+    color: #888;
+    margin-top: 10px;
+    font-size: 0.9rem;
+}
+
+.neon-link {
+    color: #ff00ea;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.neon-link:hover {
+    color: #fff;
+    text-shadow: 0 0 10px #ff00ea, 0 0 20px #ff00ea;
+}
+
+.glitch-title-small {
+    font-family: 'Syncopate', sans-serif;
+    font-size: 1.5rem;
+    color: #fff;
+    letter-spacing: 2px;
+}
+
+/* Sociais */
+.social-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+}
+
+.social-btn {
+    padding: 15px 30px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #fff;
+    text-decoration: none;
+    font-family: 'Syncopate', sans-serif;
+    font-size: 0.75rem;
+    text-align: center;
+    letter-spacing: 2px;
+    position: relative;
+    background: transparent;
+    overflow: hidden;
+}
+
+.social-btn::before {
+    content: attr(data-text);
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #ff00ea;
+    color: #000;
+    transform: translateX(-101%);
+    transition: transform 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.social-btn:hover::before {
+    transform: translateX(0);
+    animation: glitch-anim 0.3s infinite alternate;
+}
+
+.social-btn:hover {
+    border-color: #ff00ea;
+    box-shadow: 0 0 20px rgba(255, 0, 234, 0.4);
+}
+
+@keyframes glitch-anim {
+    0% { clip-path: polygon(0 2%, 100% 2%, 100% 5%, 0 5%); transform: translateX(2px); }
+    20% { clip-path: polygon(0 15%, 100% 15%, 100% 15%, 0 15%); transform: translateX(-2px); }
+    40% { clip-path: polygon(0 10%, 100% 10%, 100% 20%, 0 20%); transform: translateX(2px); }
+    60% { clip-path: polygon(0 1%, 100% 1%, 100% 2%, 0 2%); transform: translateX(-2px); }
+    80% { clip-path: polygon(0 33%, 100% 33%, 100% 33%, 0 33%); transform: translateX(2px); }
+    100% { clip-path: polygon(0 44%, 100% 44%, 100% 44%, 0 44%); transform: translateX(-2px); }
+}
+
+.footer-bottom {
+    text-align: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    padding-top: 25px;
+    font-size: 0.75rem;
+    color: #666;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
+.blinking-cursor {
+    font-weight: bold;
+    color: #ff0055;
+    animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+    50% { opacity: 0; }
+}
+
 @media (max-width: 768px) {
     .form-grid {
         grid-template-columns: 1fr;
@@ -817,5 +829,9 @@ html {
     }
     .channel-selector {
         flex-direction: column;
+    }
+    .footer-container {
+        flex-direction: column;
+        text-align: center;
     }
 }
