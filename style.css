@@ -556,7 +556,7 @@ html {
     text-align: center;
     opacity: 0;
     transition: opacity 0.3s ease;
-    border-radius: 50%;
+    border-radius: 20%;
 }
 
 .carousel-overlay h3 {
