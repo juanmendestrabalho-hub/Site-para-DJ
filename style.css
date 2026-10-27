@@ -110,8 +110,8 @@ html {
 }
 
 .btn-secondary:hover {
-    border-color: #ff0055;
-    color: #ff0055;
+    border-color: #00f1ff;
+    color: #00ceff;
     background: rgba(255, 0, 85, 0.05);
     transform: translateY(-3px);
 }
