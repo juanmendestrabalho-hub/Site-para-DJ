@@ -137,7 +137,7 @@ if(cdWrapper) {
     });
 }
 
-/* === INTERAÇÃO DO FORMULÁRIO DE BOOKING (WHATSAPP / EMAIL) === */
+/* === INTERAÇÃO DO FORMULÁRIO DE BOOKING (WHATSAPP E E-MAIL) === */
 const bookingForm = document.getElementById('bookingForm');
 const formStatus = document.getElementById('formStatus');
 
@@ -154,7 +154,6 @@ if (bookingForm) {
         const capacity = document.getElementById('eventCapacity').value;
         const details = document.getElementById('eventDetails').value;
         
-        // Formata a mensagem para envio
         const message = `*NOVA PROPOSTA DE BOOKING*%0A` +
                         `-----------------------------------%0A` +
                         `*Nome/Produtora:* ${name}%0A` +
@@ -165,17 +164,32 @@ if (bookingForm) {
                         `*Capacidade:* ${capacity}%0A` +
                         `*Detalhes:* ${details}`;
 
-        // Opção 1: Enviar direto para o WhatsApp 
-        const whatsappNumber = "5511999999999"; 
+        const whatsappNumber = "5511999999999"; // número
         const whatsappUrl = `https://api.whatsapp.com/send?phone=${whatsappNumber}&text=${message}`;
 
-        // Feedback visual antes de redirecionar
-        formStatus.className = 'form-status success';
-        formStatus.textContent = 'REDIRECIONANDO PARA O WHATSAPP...';
+        // URL de E-mail 
+        const myEmail = "booking@cybertrack.com";
+        const subject = encodeURIComponent(`Nova Proposta de Booking - ${name}`);
+        const body = encodeURIComponent(
+            `Nome/Produtora: ${name}\n` +
+            `E-mail: ${email}\n` +
+            `Telefone: ${phone}\n` +
+            `Local: ${location}\n` +
+            `Data: ${date}\n` +
+            `Capacidade: ${capacity}\n\n` +
+            `Detalhes:\n${details}`
+        );
+        const emailUrl = `mailto:${myEmail}?subject=${subject}&body=${body}`;
 
+        // Feedback visual
+        formStatus.className = 'form-status success';
+        formStatus.textContent = 'PROCESSANDO PROPOSTA... ESCOLHA O CANAL';
+
+        // abrindo o WhatsApp como principal
         setTimeout(() => {
             window.open(whatsappUrl, '_blank');
-            formStatus.textContent = '✓ PROPOSTA ENVIADA COM SUCESSO!';
+            // Se quiser abrir o e-mail também ou dar opção, o link do email está pronto na variável emailUrl
+            formStatus.textContent = '✓ TRANSMISSÃO CONCLUÍDA COM SUCESSO!';
             bookingForm.reset();
         }, 1000);
     });
