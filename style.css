@@ -68,6 +68,11 @@ body {
     font-weight: 300;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
+
 /* Botões */
 .cta-group {
     display: flex;
