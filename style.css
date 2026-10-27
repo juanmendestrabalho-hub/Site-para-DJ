@@ -5,25 +5,27 @@
 }
 
 body {
-    background-color: #030305; /* Preto muito profundo */
+    background-color: #030305;
     color: #ffffff;
     font-family: 'Space Grotesk', sans-serif;
     overflow-x: hidden;
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    justify-content: flex-start;
     align-items: center;
 }
 
 /* Canvas fixo no fundo */
 #cyberCanvas {
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     z-index: 0;
     opacity: 0.6;
+    pointer-events: none;
 }
 
 /* Conteúdo por cima do canvas */
@@ -32,12 +34,16 @@ body {
     z-index: 10;
     text-align: center;
     max-width: 800px;
-    padding: 0 20px;
+    padding: 120px 20px 80px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 .subtitle {
     font-family: 'Syncopate', sans-serif;
-    color: #00ffcc; /* Ciano tecnológico */
+    color: #00ffcc; 
     letter-spacing: 5px;
     font-size: 1rem;
     margin-bottom: 20px;
@@ -62,7 +68,7 @@ body {
     font-weight: 300;
 }
 
-/* Grupo de Botões - Foco em Conversão */
+/* Botões */
 .cta-group {
     display: flex;
     gap: 20px;
@@ -107,7 +113,7 @@ body {
 }
 
 /* =========================================
-   TOUR DATES & RADAR CIBERNÉTICO
+    DATES & RADAR CIBERNÉTICO
 ========================================= */
 .tour-section {
     padding: 100px 5%;
@@ -115,20 +121,20 @@ body {
     position: relative;
     z-index: 10;
     border-top: 1px solid rgba(0, 255, 204, 0.15);
+    width: 100%;
 }
 
 .tour-container {
-    max-width: 1200px;
+    max-width: 900px;
     margin: 0 auto;
     display: flex;
-    gap: 60px;
+    flex-direction: column; 
     align-items: center;
-    flex-wrap: wrap;
+    gap: 60px;
 }
 
 .tour-list {
-    flex: 1;
-    min-width: 320px;
+    width: 100%;
 }
 
 .section-title {
@@ -136,6 +142,7 @@ body {
     font-size: 2.5rem;
     margin-bottom: 40px;
     color: #fff;
+    text-align: center;
 }
 
 .glitch-text {
@@ -151,11 +158,13 @@ body {
     border-bottom: 1px solid rgba(255, 255, 255, 0.08);
     transition: all 0.3s ease;
     cursor: pointer;
+    width: 100%;
 }
 
 .event-row:hover {
     background: rgba(0, 255, 204, 0.05);
     padding-left: 20px;
+    padding-right: 20px;
     border-bottom-color: #00ffcc;
 }
 
@@ -203,13 +212,12 @@ body {
     box-shadow: 0 0 20px rgba(0, 255, 204, 0.4);
 }
 
-/* RADAR (DEADMAU5 VIBE) */
+/* RADAR */
 .radar-container {
-    flex: 1;
     display: flex;
     justify-content: center;
     align-items: center;
-    min-width: 320px;
+    width: 100%;
 }
 
 .radar {
@@ -278,28 +286,28 @@ body {
 }
 
 /* =========================================
-   SECÇÃO DE MÚSICA & CD HOLOGRÁFICO 3D
+   SECÇÃO DE MÚSICA & CD HOLOGRÁFICO 
 ========================================= */
 .music-section {
     padding: 100px 5%;
     background-color: #030305;
     position: relative;
     z-index: 10;
+    width: 100%;
 }
 
 .music-container {
-    max-width: 1200px;
+    max-width: 900px;
     margin: 0 auto;
     display: flex;
+    flex-direction: column; 
     align-items: center;
-    justify-content: space-between;
+    text-align: center;
     gap: 60px;
-    flex-wrap: wrap;
 }
 
 .music-info {
-    flex: 1;
-    min-width: 320px;
+    width: 100%;
 }
 
 .track-title {
@@ -315,12 +323,16 @@ body {
     font-size: 1.1rem;
     line-height: 1.6;
     margin-bottom: 40px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 /* Botões de Streaming */
 .stream-buttons {
     display: flex;
     gap: 20px;
+    justify-content: center;
     flex-wrap: wrap;
 }
 
@@ -355,13 +367,11 @@ body {
     transform: translateY(-3px);
 }
 
-/* O CD 3D */
+/* CD 3D */
 .cd-container {
-    flex: 1;
     display: flex;
     justify-content: center;
-    min-width: 320px;
-    /* Adiciona a perspetiva à câmara */
+    width: 100%;
     perspective: 1000px; 
 }
 
@@ -370,7 +380,6 @@ body {
     height: 350px;
     position: relative;
     transform-style: preserve-3d;
-    /* Transição muito rápida para seguir o rato suavemente */
     transition: transform 0.1s ease-out; 
     cursor: pointer;
 }
@@ -379,7 +388,6 @@ body {
     width: 100%;
     height: 100%;
     border-radius: 50%;
-    /* Textura ranhurada a simular um vinil / CD */
     background: repeating-radial-gradient(
         #111,
         #111 2px,
@@ -393,28 +401,24 @@ body {
     position: absolute;
     top: 0; left: 0;
     overflow: hidden;
-    /* Gira eternamente, mas começa pausado */
     animation: spinCd 4s linear infinite;
     animation-play-state: paused;
 }
 
-/* Quando passa o rato, o CD começa a girar */
 .cd-wrapper:hover .cd {
     animation-play-state: running;
 }
 
-/* O Buraco Central com anel Neon */
 .cd-center {
     width: 90px;
     height: 90px;
-    background: #030305; /* Fundo do site para parecer furado */
+    background: #030305;
     border-radius: 50%;
     border: 3px solid #00ffcc;
     z-index: 2;
     box-shadow: inset 0 0 15px rgba(0,0,0,0.9), 0 0 15px rgba(0, 255, 204, 0.5);
 }
 
-/* Película Holográfica por cima */
 .hologram-glare {
     position: absolute;
     inset: 0;
@@ -430,7 +434,7 @@ body {
 }
 
 /* =========================================
-   RODAPÉ TECNOLÓGICO & SOCIALS
+   RODAPÉ & SOCIALS
 ========================================= */
 .tech-footer {
     background-color: #010101;
@@ -438,6 +442,7 @@ body {
     border-top: 1px solid #1a1a1a;
     position: relative;
     overflow: hidden;
+    width: 100%;
 }
 
 .tech-footer::before {
@@ -482,7 +487,7 @@ body {
     letter-spacing: 2px;
 }
 
-/* Grelha de Botões Sociais */
+/* Sociais */
 .social-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -503,7 +508,6 @@ body {
     overflow: hidden;
 }
 
-/* Efeito de Glitch no Hover */
 .social-btn::before {
     content: attr(data-text);
     position: absolute;
@@ -536,7 +540,6 @@ body {
     100% { clip-path: polygon(0 44%, 100% 44%, 100% 44%, 0 44%); transform: translateX(-2px); }
 }
 
-/* Linha Final e Cursor a Piscar */
 .footer-bottom {
     text-align: center;
     border-top: 1px solid rgba(255, 255, 255, 0.05);
