@@ -92,3 +92,24 @@ function animate() {
 
 init();
 animate();
+
+/* === INTERAÇÃO DO RADAR DE EVENTOS === */
+const eventRows = document.querySelectorAll('.event-row');
+const blip = document.getElementById('radar-blip');
+
+eventRows.forEach(row => {
+    row.addEventListener('mouseenter', () => {
+        // Lê as coordenadas (em percentagem)
+        const x = row.getAttribute('data-x');
+        const y = row.getAttribute('data-y');
+        
+        // Move o ponto para a localização do evento e acende
+        blip.style.left = x + '%';
+        blip.style.top = y + '%';
+        blip.classList.add('active');
+    });
+
+    row.addEventListener('mouseleave', () => {
+        blip.classList.remove('active');
+    });
+});
