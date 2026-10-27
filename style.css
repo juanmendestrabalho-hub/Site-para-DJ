@@ -332,7 +332,18 @@ html {
     margin-right: auto;
 }
 
-/* Botões de Streaming (Spotify, Apple, Deezer, SoundCloud) */
+/* Player do Spotify incorporado */
+.spotify-player-wrapper {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto 30px auto;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 0 25px rgba(255, 0, 234, 0.2);
+    border: 1px solid rgba(255, 0, 234, 0.3);
+}
+
+/* Botões de Streaming */
 .stream-buttons {
     display: flex;
     gap: 20px;
@@ -429,7 +440,8 @@ html {
     animation-play-state: paused;
 }
 
-.cd-wrapper:hover .cd {
+.cd-wrapper:hover .cd,
+.cd.playing {
     animation-play-state: running;
 }
 
