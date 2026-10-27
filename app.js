@@ -137,22 +137,43 @@ if(cdWrapper) {
     });
 }
 
-/* === INTERAÇÃO DO FORMULÁRIO DE BOOKING (WHATSAPP E E-MAIL) === */
-const bookingForm = document.getElementById('bookingForm');
-const formStatus = document.getElementById('formStatus');
+/* === ALTERNÂNCIA E ENVIO DOS FORMULÁRIOS (WHATSAPP E E-MAIL) === */
+const btnWpp = document.getElementById('btnWpp');
+const btnEmail = document.getElementById('btnEmail');
+const formWpp = document.getElementById('bookingFormWpp');
+const formEmail = document.getElementById('bookingFormEmail');
 
-if (bookingForm) {
-    bookingForm.addEventListener('submit', (e) => {
+if (btnWpp && btnEmail) {
+    // Alternar para WhatsApp
+    btnWpp.addEventListener('click', () => {
+        btnWpp.classList.add('active');
+        btnEmail.classList.remove('active');
+        formWpp.style.display = 'block';
+        formEmail.style.display = 'none';
+    });
+
+    // Alternar para E-mail
+    btnEmail.addEventListener('click', () => {
+        btnEmail.classList.add('active');
+        btnWpp.classList.remove('active');
+        formEmail.style.display = 'block';
+        formWpp.style.display = 'none';
+    });
+}
+
+/* Envio via WhatsApp */
+if (formWpp) {
+    formWpp.addEventListener('submit', (e) => {
         e.preventDefault();
+        const status = document.getElementById('wppStatus');
         
-        // Captura os valores dos campos
-        const name = document.getElementById('promoterName').value;
-        const email = document.getElementById('promoterEmail').value;
-        const phone = document.getElementById('promoterPhone').value;
-        const location = document.getElementById('eventLocation').value;
-        const date = document.getElementById('eventDate').value;
-        const capacity = document.getElementById('eventCapacity').value;
-        const details = document.getElementById('eventDetails').value;
+        const name = document.getElementById('wppName').value;
+        const email = document.getElementById('wppEmail').value;
+        const phone = document.getElementById('wppPhone').value;
+        const location = document.getElementById('wppLocation').value;
+        const date = document.getElementById('wppDate').value;
+        const capacity = document.getElementById('wppCapacity').value;
+        const details = document.getElementById('wppDetails').value;
         
         const message = `*NOVA PROPOSTA DE BOOKING*%0A` +
                         `-----------------------------------%0A` +
@@ -164,33 +185,55 @@ if (bookingForm) {
                         `*Capacidade:* ${capacity}%0A` +
                         `*Detalhes:* ${details}`;
 
-        const whatsappNumber = "5511999999999"; // número
+        const whatsappNumber = "5511999999999"; // Meu número
         const whatsappUrl = `https://api.whatsapp.com/send?phone=${whatsappNumber}&text=${message}`;
 
-        // URL de E-mail 
-        const myEmail = "booking@cybertrack.com";
+        status.className = 'form-status success';
+        status.textContent = 'ABRINDO WHATSAPP...';
+
+        setTimeout(() => {
+            window.open(whatsappUrl, '_blank');
+            status.textContent = '✓ TRANSMISSÃO CONCLUÍDA COM SUCESSO!';
+            formWpp.reset();
+        }, 800);
+    });
+}
+
+/* Envio via E-mail */
+if (formEmail) {
+    formEmail.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const status = document.getElementById('emailStatus');
+        
+        const name = document.getElementById('emailName').value;
+        const email = document.getElementById('emailReplyTo').value;
+        const phone = document.getElementById('emailPhone').value;
+        const location = document.getElementById('emailLocation').value;
+        const date = document.getElementById('emailDate').value;
+        const capacity = document.getElementById('emailCapacity').value;
+        const details = document.getElementById('emailDetails').value;
+
+        const myEmail = "booking@cybertrack.com"; // Meu e-mail
         const subject = encodeURIComponent(`Nova Proposta de Booking - ${name}`);
         const body = encodeURIComponent(
             `Nome/Produtora: ${name}\n` +
-            `E-mail: ${email}\n` +
+            `E-mail de Contato: ${email}\n` +
             `Telefone: ${phone}\n` +
             `Local: ${location}\n` +
             `Data: ${date}\n` +
             `Capacidade: ${capacity}\n\n` +
-            `Detalhes:\n${details}`
+            `Detalhes da Proposta:\n${details}`
         );
+
         const emailUrl = `mailto:${myEmail}?subject=${subject}&body=${body}`;
 
-        // Feedback visual
-        formStatus.className = 'form-status success';
-        formStatus.textContent = 'PROCESSANDO PROPOSTA... ESCOLHA O CANAL';
+        status.className = 'form-status success';
+        status.textContent = 'ABRINDO GERENCIADOR DE E-MAIL...';
 
-        // abrindo o WhatsApp como principal
         setTimeout(() => {
-            window.open(whatsappUrl, '_blank');
-            // Se quiser abrir o e-mail também ou dar opção, o link do email está pronto na variável emailUrl
-            formStatus.textContent = '✓ TRANSMISSÃO CONCLUÍDA COM SUCESSO!';
-            bookingForm.reset();
-        }, 1000);
+            window.location.href = emailUrl;
+            status.textContent = '✓ TRANSMISSÃO CONCLUÍDA COM SUCESSO!';
+            formEmail.reset();
+        }, 800);
     });
 }
