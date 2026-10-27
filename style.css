@@ -336,7 +336,7 @@ html {
 .spotify-player-wrapper {
     width: 100%;
     max-width: 600px;
-    margin: 0 auto 30px auto;
+    margin: 0 auto 20px auto;
     border-radius: 12px;
     overflow: hidden;
     box-shadow: 0 0 25px rgba(255, 0, 234, 0.2);
@@ -481,7 +481,7 @@ html {
 }
 
 /* =========================================
-   GALERIA VISUAL / RECAP
+   GALERIA VISUAL / FOTOS EM CÍRCULO 3D
 ========================================= */
 .gallery-section {
     padding: 100px 5%;
@@ -499,24 +499,31 @@ html {
 
 .gallery-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 30px;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 35px;
     margin-top: 40px;
+    justify-items: center;
 }
 
 .gallery-item {
     position: relative;
-    height: 350px;
+    width: 260px;
+    height: 260px;
+    border-radius: 50%;
     overflow: hidden;
-    border-radius: 6px;
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: 3px solid rgba(255, 0, 234, 0.4);
     background: #111;
     cursor: pointer;
+    box-shadow: 0 0 25px rgba(255, 0, 234, 0.2), inset 0 0 20px rgba(0,0,0,0.9);
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    transform-style: preserve-3d;
 }
 
 .gallery-img-wrapper {
     width: 100%;
     height: 100%;
+    border-radius: 50%;
+    overflow: hidden;
 }
 
 .gallery-img-wrapper img {
@@ -524,41 +531,51 @@ html {
     height: 100%;
     object-fit: cover;
     transition: transform 0.5s ease, filter 0.5s ease;
-    filter: grayscale(40%) contrast(120%);
+    filter: grayscale(30%) contrast(120%);
 }
 
 .gallery-overlay {
     position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    padding: 30px;
-    background: linear-gradient(to top, rgba(3, 3, 5, 0.95), transparent);
-    transform: translateY(20px);
+    inset: 0;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    text-align: center;
+    background: rgba(3, 3, 5, 0.85);
     opacity: 0;
+    transform: scale(0.8);
     transition: all 0.3s ease;
 }
 
+.gallery-item:hover {
+    transform: scale(1.08) rotateX(5deg) rotateY(5deg);
+    border-color: #ff00ea;
+    box-shadow: 0 0 40px rgba(255, 0, 234, 0.6), 0 20px 30px rgba(0,0,0,0.9);
+}
+
 .gallery-item:hover .gallery-overlay {
-    transform: translateY(0);
     opacity: 1;
+    transform: scale(1);
 }
 
 .gallery-item:hover img {
-    transform: scale(1.1);
-    filter: grayscale(0%) contrast(100%);
-    border-color: #ff00ea;
+    transform: scale(1.15);
+    filter: grayscale(0%) contrast(110%);
 }
 
 .gallery-overlay h3 {
     font-family: 'Syncopate', sans-serif;
-    font-size: 1.1rem;
+    font-size: 0.9rem;
     color: #fff;
     margin-bottom: 5px;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
 }
 
 .gallery-overlay p {
-    font-size: 0.85rem;
+    font-size: 0.75rem;
     color: #ff00ea;
     letter-spacing: 2px;
     text-transform: uppercase;
@@ -653,7 +670,7 @@ html {
 .form-group label {
     font-family: 'Syncopate', sans-serif;
     font-size: 0.75rem;
-    color: #ffffff; /* <-- Alterado para branco */
+    color: #ffffff;
     letter-spacing: 1px;
 }
 
@@ -859,7 +876,7 @@ html {
     }
 }
 
-/* Botão de Press Kit (Branco Neon com Hover Rosa Neon) */
+/* Botão de Press Kit */
 .btn-presskit {
     display: flex;
     justify-content: center;
