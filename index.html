@@ -154,7 +154,73 @@
 
 
 
+<!-- SEÇÃO DE FORMULÁRIO PARA CONTRATANTES -->
+<section class="booking-section" id="booking">
+    <div class="booking-container">
+        <h2 class="section-title">PARA <span class="glitch-text"> CONTRATANTES </span></h2>
+        <p class="booking-subtitle">ENVIE SUA PROPOSTA DE SHOW, FESTIVAL OU EVENTO PRIVADO.</p>
 
+        <form class="booking-form" id="bookingForm">
+            <div class="form-grid">
+                <!-- Nome do Contratante / Produtora -->
+                <div class="form-group">
+                    <label for="promoterName">NOME / PRODUTORA *</label>
+                    <input type="text" id="promoterName" name="promoterName" placeholder="Ex: Cyber Events Org" required>
+                </div>
+
+                <!-- E-mail de Contato -->
+                <div class="form-group">
+                    <label for="promoterEmail">E-MAIL DE CONTATO *</label>
+                    <input type="email" id="promoterEmail" name="promoterEmail" placeholder="contato@empresa.com" required>
+                </div>
+
+                <!-- Telefone / WhatsApp -->
+                <div class="form-group">
+                    <label for="promoterPhone">TELEFONE / WHATSAPP *</label>
+                    <input type="tel" id="promoterPhone" name="promoterPhone" placeholder="+55 (11) 99999-9999" required>
+                </div>
+
+                <!-- Local do Evento -->
+                <div class="form-group">
+                    <label for="eventLocation">CIDADE / PAÍS *</label>
+                    <input type="text" id="eventLocation" name="eventLocation" placeholder="Ex: São Paulo, Brasil" required>
+                </div>
+
+                <!-- Data Prevista -->
+                <div class="form-group">
+                    <label for="eventDate">DATA DO EVENTO *</label>
+                    <input type="date" id="eventDate" name="eventDate" required>
+                </div>
+
+                <!-- Capacidade do Evento -->
+                <div class="form-group">
+                    <label for="eventCapacity">CAPACIDADE DE PÚBLICO</label>
+                    <select id="eventCapacity" name="eventCapacity">
+                        <option value="" disabled selected>Selecione a estimativa</option>
+                        <option value="club">Club (Até 500 pessoas)</option>
+                        <option value="medium">Médio (500 a 2.000 pessoas)</option>
+                        <option value="large">Grande (2.000 a 10.000 pessoas)</option>
+                        <option value="festival">Festival (+10.000 pessoas)</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Detalhes Adicionais -->
+            <div class="form-group full-width">
+                <label for="eventDetails">DETALHES DO EVENTO / PROPOSTA *</label>
+                <textarea id="eventDetails" name="eventDetails" rows="4" placeholder="Informe estrutura de som, horários previstos e detalhes do Line-up..." required></textarea>
+            </div>
+
+            <!-- Botão de Envio -->
+            <button type="submit" class="btn-primary btn-submit">
+                ENVIAR PROPOSTA <span class="btn-glitch">_</span>
+            </button>
+            
+            <!-- Mensagem de Resposta -->
+            <div class="form-status" id="formStatus"></div>
+        </form>
+    </div>
+</section>
     
 <!-- SECÇÃO RODAPÉ TECNOLÓGICO -->
 <footer class="tech-footer" id="contact">
