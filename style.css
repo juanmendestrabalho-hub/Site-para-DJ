@@ -484,7 +484,7 @@ html {
    CARROSSEL CIRCULAR 3D
 ========================================= */
 .gallery-section {
-    padding: 100px 5%;
+    padding: 100px 10%;
     background-color: #030305;
     position: relative;
     z-index: 10;
@@ -494,7 +494,7 @@ html {
 }
 
 .gallery-container {
-    max-width: 1200px;
+    max-width: 850px;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
@@ -513,18 +513,18 @@ html {
 
 .carousel-3d {
     position: relative;
-    width: 220px;
-    height: 220px;
+    width: 250px;
+    height: 250px;
     transform-style: preserve-3d;
     transition: transform 0.1s ease-out;
 }
 
 .carousel-item {
     position: absolute;
-    width: 200px;
-    height: 200px;
-    left: 10px;
-    top: 10px;
+    width: 290px;
+    height: 280px;
+    left: 20px;
+    top: 20px;
     border-radius: 20%;
     overflow: hidden;
     border: 3px solid #ff00ea;
