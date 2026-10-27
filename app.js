@@ -136,3 +136,23 @@ if(cdWrapper) {
         cdWrapper.style.transform = `rotateX(0deg) rotateY(0deg) scale(1)`;
     });
 }
+
+/* === INTERAÇÃO DO FORMULÁRIO DE BOOKING === */
+const bookingForm = document.getElementById('bookingForm');
+const formStatus = document.getElementById('formStatus');
+
+if (bookingForm) {
+    bookingForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        
+        // Efeito de envio
+        formStatus.className = 'form-status';
+        formStatus.textContent = 'TRANSMITINDO DADOS DA PROPOSTA...';
+        
+        setTimeout(() => {
+            formStatus.className = 'form-status success';
+            formStatus.textContent = '✓ PROPOSTA RECEBIDA COM SUCESSO! RETORNAREMOS EM BREVE.';
+            bookingForm.reset();
+        }, 1500);
+    });
+}
