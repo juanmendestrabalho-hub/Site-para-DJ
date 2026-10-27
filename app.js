@@ -137,7 +137,7 @@ if(cdWrapper) {
     });
 }
 
-/* === INTERAÇÃO DO FORMULÁRIO DE BOOKING === */
+/* === INTERAÇÃO DO FORMULÁRIO DE BOOKING (WHATSAPP / EMAIL) === */
 const bookingForm = document.getElementById('bookingForm');
 const formStatus = document.getElementById('formStatus');
 
@@ -145,14 +145,38 @@ if (bookingForm) {
     bookingForm.addEventListener('submit', (e) => {
         e.preventDefault();
         
-        // Efeito de envio
-        formStatus.className = 'form-status';
-        formStatus.textContent = 'TRANSMITINDO DADOS DA PROPOSTA...';
+        // Captura os valores dos campos
+        const name = document.getElementById('promoterName').value;
+        const email = document.getElementById('promoterEmail').value;
+        const phone = document.getElementById('promoterPhone').value;
+        const location = document.getElementById('eventLocation').value;
+        const date = document.getElementById('eventDate').value;
+        const capacity = document.getElementById('eventCapacity').value;
+        const details = document.getElementById('eventDetails').value;
         
+        // Formata a mensagem para envio
+        const message = `*NOVA PROPOSTA DE BOOKING*%0A` +
+                        `-----------------------------------%0A` +
+                        `*Nome/Produtora:* ${name}%0A` +
+                        `*E-mail:* ${email}%0A` +
+                        `*Telefone:* ${phone}%0A` +
+                        `*Local:* ${location}%0A` +
+                        `*Data:* ${date}%0A` +
+                        `*Capacidade:* ${capacity}%0A` +
+                        `*Detalhes:* ${details}`;
+
+        // Opção 1: Enviar direto para o WhatsApp 
+        const whatsappNumber = "5511999999999"; 
+        const whatsappUrl = `https://api.whatsapp.com/send?phone=${whatsappNumber}&text=${message}`;
+
+        // Feedback visual antes de redirecionar
+        formStatus.className = 'form-status success';
+        formStatus.textContent = 'REDIRECIONANDO PARA O WHATSAPP...';
+
         setTimeout(() => {
-            formStatus.className = 'form-status success';
-            formStatus.textContent = '✓ PROPOSTA RECEBIDA COM SUCESSO! RETORNAREMOS EM BREVE.';
+            window.open(whatsappUrl, '_blank');
+            formStatus.textContent = '✓ PROPOSTA ENVIADA COM SUCESSO!';
             bookingForm.reset();
-        }, 1500);
+        }, 1000);
     });
 }
