@@ -252,3 +252,38 @@ if (vinylDisc) {
         // vinylDisc.classList.remove('playing');
     });
 }
+
+/* === CARROSSEL 3D ROTATIVO === */
+const carousel = document.getElementById('carousel3D');
+
+if (carousel) {
+    let angle = 0;
+    let isDragging = false;
+    let startX = 0;
+
+    // Rotação automática suave
+    let autoRotate = setInterval(() => {
+        if (!isDragging) {
+            angle -= 0.3; // Velocidade de rotação automática
+            carousel.style.transform = `rotateY(${angle}deg)`;
+        }
+    }, 30);
+
+    // Controle manual por arraste do mouse
+    carousel.addEventListener('mousedown', (e) => {
+        isDragging = true;
+        startX = e.clientX;
+    });
+
+    window.addEventListener('mousemove', (e) => {
+        if (!isDragging) return;
+        const deltaX = e.clientX - startX;
+        startX = e.clientX;
+        angle += deltaX * 0.5;
+        carousel.style.transform = `rotateY(${angle}deg)`;
+    });
+
+    window.addEventListener('mouseup', () => {
+        isDragging = false;
+    });
+}
