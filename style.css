@@ -481,7 +481,7 @@ html {
 }
 
 /* =========================================
-   GALERIA VISUAL / FOTOS EM CÍRCULO 3D
+   CARROSSEL CIRCULAR 3D
 ========================================= */
 .gallery-section {
     padding: 100px 5%;
@@ -490,95 +490,102 @@ html {
     z-index: 10;
     width: 100%;
     border-top: 1px solid rgba(255, 255, 255, 0.05);
+    overflow: hidden;
 }
 
 .gallery-container {
     max-width: 1200px;
     margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-.gallery-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 35px;
-    margin-top: 40px;
-    justify-items: center;
+.carousel-3d-container {
+    perspective: 1200px;
+    width: 100%;
+    height: 350px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
 }
 
-.gallery-item {
+.carousel-3d {
     position: relative;
-    width: 260px;
-    height: 260px;
+    width: 220px;
+    height: 220px;
+    transform-style: preserve-3d;
+    transition: transform 0.1s ease-out;
+}
+
+.carousel-item {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    left: 10px;
+    top: 10px;
     border-radius: 50%;
     overflow: hidden;
-    border: 3px solid rgba(255, 0, 234, 0.4);
+    border: 3px solid #ff00ea;
+    box-shadow: 0 0 25px rgba(255, 0, 234, 0.4);
     background: #111;
     cursor: pointer;
-    box-shadow: 0 0 25px rgba(255, 0, 234, 0.2), inset 0 0 20px rgba(0,0,0,0.9);
-    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    transform-style: preserve-3d;
+    /* Posicionamento em círculo 3D (7 itens = 360deg / 7 ≈ 51.4deg) */
+    transform: rotateY(calc(var(--i) * 51.4deg)) translateZ(300px);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.gallery-img-wrapper {
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-    overflow: hidden;
-}
-
-.gallery-img-wrapper img {
+.carousel-item img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: transform 0.5s ease, filter 0.5s ease;
     filter: grayscale(30%) contrast(120%);
+    transition: 0.3s;
 }
 
-.gallery-overlay {
+.carousel-overlay {
     position: absolute;
     inset: 0;
-    border-radius: 50%;
+    background: rgba(3, 3, 5, 0.85);
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 20px;
+    padding: 15px;
     text-align: center;
-    background: rgba(3, 3, 5, 0.85);
     opacity: 0;
-    transform: scale(0.8);
-    transition: all 0.3s ease;
+    transition: opacity 0.3s ease;
+    border-radius: 50%;
 }
 
-.gallery-item:hover {
-    transform: scale(1.08) rotateX(5deg) rotateY(5deg);
-    border-color: #ff00ea;
-    box-shadow: 0 0 40px rgba(255, 0, 234, 0.6), 0 20px 30px rgba(0,0,0,0.9);
-}
-
-.gallery-item:hover .gallery-overlay {
-    opacity: 1;
-    transform: scale(1);
-}
-
-.gallery-item:hover img {
-    transform: scale(1.15);
-    filter: grayscale(0%) contrast(110%);
-}
-
-.gallery-overlay h3 {
+.carousel-overlay h3 {
     font-family: 'Syncopate', sans-serif;
-    font-size: 0.9rem;
+    font-size: 0.8rem;
     color: #fff;
-    margin-bottom: 5px;
-    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+    text-shadow: 0 0 10px #ff00ea;
+    margin-bottom: 3px;
 }
 
-.gallery-overlay p {
-    font-size: 0.75rem;
+.carousel-overlay p {
+    font-size: 0.65rem;
     color: #ff00ea;
     letter-spacing: 2px;
     text-transform: uppercase;
+}
+
+.carousel-item:hover .carousel-overlay {
+    opacity: 1;
+}
+
+.carousel-item:hover img {
+    transform: scale(1.15);
+    filter: grayscale(0%);
+}
+
+.carousel-item:hover {
+    box-shadow: 0 0 40px rgba(255, 0, 234, 0.8);
+    border-color: #27b9e7;
 }
 
 /* =========================================
