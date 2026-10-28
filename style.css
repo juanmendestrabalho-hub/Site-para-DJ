@@ -915,24 +915,57 @@ html {
     transform: translateY(-2px);
 }
 
-/* Estilo para transformar as imagens em ÍCONES */
+/* Grelha principal para alinhar os itens LADO A LADO na horizontal */
+.support-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 40px;
+    margin-top: 40px;
+    width: 100%;
+}
+
+/* Estrutura individual: imagem em cima, texto em baixo */
+.support-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+/* O seu estilo de imagem circular */
 .support-item img {
-    width: 70px;         /* Largura fixa do ícone */
-    height: 70px;        /* Altura fixa do ícone */
-    object-fit: cover;   
-    border-radius: 50%;  
-    border: 2px solid rgba(255, 255, 255, 0.1); 
-    
-   
+    width: 70px;
+    height: 70px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 2px solid rgba(255, 255, 255, 0.1);
     filter: grayscale(100%) opacity(50%);
     transition: all 0.4s ease;
     cursor: pointer;
 }
 
-
 .support-item:hover img {
     filter: grayscale(0%) opacity(100%);
-    border-color: #27b9e7; /* A borda acende a ciano */
-    box-shadow: 0 0 20px rgba(39, 185, 231, 0.5); /* Brilho neon */
-    transform: scale(1.15); 
+    border-color: #27b9e7;
+    box-shadow: 0 0 20px rgba(39, 185, 231, 0.5);
+    transform: scale(1.15);
+}
+
+/* Estilo da legenda de texto */
+.icon-label {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: rgba(255, 255, 255, 0.5);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-align: center;
+    transition: all 0.4s ease;
+}
+
+.support-item:hover .icon-label {
+    color: #27b9e7;
+    text-shadow: 0 0 10px rgba(39, 185, 231, 0.5);
 }
