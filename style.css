@@ -915,6 +915,35 @@ html {
     transform: translateY(-2px);
 }
 
+/* =========================================
+   SECÇÃO SUPPORTED (CARDS DE EVENTOS)
+========================================= */
+.supported-section {
+    padding: 60px 5%;
+    background-color: #030305;
+    position: relative;
+    z-index: 10;
+    width: 100%;
+}
+
+.supported-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Garante a centralização de todo o bloco */
+    text-align: center;
+    width: 100%;
+}
+
+.section-title-small {
+    font-family: 'Syncopate', sans-serif;
+    font-size: 1.8rem;
+    color: #fff;
+    margin-bottom: 40px;
+    text-align: center; /* Centraliza o texto do título */
+    width: 100%;
+}
 /* Grelha principal para alinhar os itens LADO A LADO na horizontal */
 .support-grid {
     display: flex;
@@ -940,8 +969,9 @@ html {
     height: 70px;
     object-fit: cover;
     border-radius: 50%;
-    border: 2px solid rgba(255, 255, 255, 0.1);
-    filter: grayscale(100%) opacity(50%);
+    border: 2px solid rgba(255, 255, 255, 0.15);
+    filter: grayscale(100%) opacity(90%) brightness(1.2);
+    
     transition: all 0.4s ease;
     cursor: pointer;
 }
