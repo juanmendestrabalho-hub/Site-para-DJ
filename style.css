@@ -915,4 +915,24 @@ html {
     transform: translateY(-2px);
 }
 
+/* Estilo para transformar as imagens em ÍCONES */
+.support-item img {
+    width: 70px;         /* Largura fixa do ícone */
+    height: 70px;        /* Altura fixa do ícone */
+    object-fit: cover;   
+    border-radius: 50%;  
+    border: 2px solid rgba(255, 255, 255, 0.1); 
+    
+   
+    filter: grayscale(100%) opacity(50%);
+    transition: all 0.4s ease;
+    cursor: pointer;
+}
 
+
+.support-item:hover img {
+    filter: grayscale(0%) opacity(100%);
+    border-color: #27b9e7; /* A borda acende a ciano */
+    box-shadow: 0 0 20px rgba(39, 185, 231, 0.5); /* Brilho neon */
+    transform: scale(1.15); 
+}
